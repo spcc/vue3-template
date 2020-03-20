@@ -6,7 +6,7 @@
 export default {
   created() {
     this.$http.post(this.$api.storeUrl.list).then(data=>{
-      console.log(data)
+      // console.log(data)
     })
   }
 }

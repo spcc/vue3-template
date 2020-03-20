@@ -16,6 +16,7 @@ module.exports = {
   chainWebpack: config => {
     const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
     types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+    // config.resolve.alias.set('@images', resolve('src/assets')).set('@images', resolve('src/assets'))
   }
 }
 
@@ -27,4 +28,7 @@ function addStyleResource(rule) {
         path.resolve(__dirname, './src/assets/css/varibles.less')
       ]
     })
+}
+function resolve(dir) {
+  return path.join(__dirname, dir)
 }
